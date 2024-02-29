@@ -1,6 +1,6 @@
 # Supported targets: el8, el9
 
-%define yq_version 4.40.5
+%define yq_version 4.42.1
 
 %define gobuild_vendor() %{lua:
     local gobuild = rpm.expand('%{gobuild}')
@@ -9,7 +9,7 @@
 }
 
 Name: yq
-Version: 4.40.5
+Version: %{yq_version}
 Release: 1%{?dist}.zenetys
 Summary: Portable command-line YAML processor
 License: MIT
