@@ -1,6 +1,6 @@
 # Supported targets: el8, el9
 
-%define yq_version 4.42.1
+%define yq_version 4.43.1
 
 %define gobuild_vendor() %{lua:
     local gobuild = rpm.expand('%{gobuild}')
@@ -16,6 +16,9 @@ License: MIT
 URL: https://github.com/mikefarah/yq
 
 Source0: https://github.com/mikefarah/yq/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
+Patch100: yq-4.43.1-revert-requirement-on-go-1.21.patch
+Patch101: yq-4.43.1-add-max-function-not-available-in-go-1.20.patch
 
 %if 0%{?rhel} <= 8
 BuildRequires: go-srpm-macros >= 2-17
@@ -37,6 +40,11 @@ continuously.
 
 mkdir yq
 tar xvzf %{SOURCE0} --strip-components 1 -C yq
+
+cd yq
+%patch100 -p1
+%patch101 -p1
+cd ..
 
 %build
 export GOPATH=$PWD/gopath
