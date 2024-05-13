@@ -1,6 +1,6 @@
 # Supported targets: el8, el9
 
-%define yq_version 4.43.1
+%define yq_version 4.44.1
 %define golang_version 1.22.3
 
 %define gobuild_vendor() %{lua:
