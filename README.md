@@ -1,4 +1,4 @@
-| Package&nbsp;name | Supported&nbsp;targets |
+| <nobr>Package name</nobr> | <nobr>Supported targets</nobr> |
 | :--- | :--- |
 | yq | el8, el9 |
 <br/>
