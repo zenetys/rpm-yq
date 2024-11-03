@@ -1,6 +1,6 @@
 # Supported targets: el8, el9
 
-%define yq_version 4.44.1
+%define yq_version 4.44.3
 %define golang_version 1.22.8
 
 %define gobuild_vendor() %{lua:
@@ -49,7 +49,7 @@ continuously.
 
 mkdir yq
 tar xvzf %{SOURCE0} --strip-components 1 -C yq
-tar xvzf %{SOURCE100} go/{bin,pkg,src}
+tar xvzf %{SOURCE100} go/{bin,go.env,pkg,src}
 
 %build
 export PATH=$PATH:$PWD/go/bin
