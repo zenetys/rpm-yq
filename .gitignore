@@ -1,0 +1,6 @@
+RPMS/
+SOURCES/*.asc
+SOURCES/*.pub
+SRPMS/
+.*.swp
+*.tar.?z
