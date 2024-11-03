@@ -1,7 +1,7 @@
 # Supported targets: el8, el9
 
 %define yq_version 4.44.1
-%define golang_version 1.22.3
+%define golang_version 1.22.8
 
 %define gobuild_vendor() %{lua:
     local gobuild = rpm.expand('%{gobuild}')
