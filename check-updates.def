@@ -1,1 +1,1 @@
-yq 4.48.1 json:map(.html_url)[]:.+ https://api.github.com/repos/mikefarah/yq/releases <v([0-9.]+)
+yq 4.49.1 json:map(.html_url)[]:.+ https://api.github.com/repos/mikefarah/yq/releases <v([0-9.]+)
