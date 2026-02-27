@@ -1,4 +1,4 @@
-# Supported targets: el8, el9
+# Supported targets: el8, el9, el10
 
 %define yq_version 4.52.2
 
@@ -7,6 +7,8 @@
     gobuild = gobuild:gsub('go build', 'go build -mod=vendor', 1)
     print(gobuild)
 }
+
+%define gomodulesmode %{nil}
 
 Name: yq
 Version: %{yq_version}
@@ -20,7 +22,11 @@ Source0: https://github.com/mikefarah/yq/archive/refs/tags/v%{version}.tar.gz#/%
 %if 0%{?rhel} <= 8
 BuildRequires: go-srpm-macros >= 2-17
 %else
+%if 0%{?rhel} <= 9
 BuildRequires: go-srpm-macros >= 3.2.0
+%else
+BuildRequires: go-rpm-macros >= 3.6.0
+%endif
 %endif
 
 BuildRequires: golang >= 1.24
