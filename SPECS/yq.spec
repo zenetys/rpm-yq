@@ -1,6 +1,6 @@
 # Supported targets: el8, el9, el10
 
-%define yq_version 4.52.2
+%define yq_version 4.52.5
 
 %define gobuild_vendor() %{lua:
     local gobuild = rpm.expand('%{gobuild}')
